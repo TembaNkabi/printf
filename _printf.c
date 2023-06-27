@@ -28,7 +28,8 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == 's')
 		{
-			_puts(va_arg(formats, char *));
+			char *words = va_arg(formats, char *);
+			_puts(words);
 			i++;
 			returnValue++;
 		}
