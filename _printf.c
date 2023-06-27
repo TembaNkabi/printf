@@ -18,26 +18,29 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
-			returnValue++;
+			(returnValue++);
 		}
 		else if (format[i + 1] == 'c')
 		{
 			_putchar(va_arg(formats, int));
 			i++;
-			returnValue++;
+			(returnValue++);
 		}
 		else if (format[i + 1] == 's')
 		{
 			char *words = va_arg(formats, char *);
+
+			if (words == NULL)
+				return (-1);
 			_puts(words);
 			i++;
-			returnValue++;
+			(returnValue++);
 		}
 		else if (format[i + 1] == '%')
 		{
 			_putchar(format[i]);
 			i++;
-			returnValue++;
+			(returnValue++);
 		}
 	}
 	va_end(formats);
