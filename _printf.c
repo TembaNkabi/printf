@@ -32,6 +32,7 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			i++;
 		}
+		i++;
 	}
 	return (returnValue);
 	va_end(formats);
